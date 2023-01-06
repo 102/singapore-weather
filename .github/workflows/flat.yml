@@ -20,7 +20,7 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: http://dataservice.accuweather.com/currentconditions/v1/300597?apikey=${{ secrets.ACCUWEATHER_API_KEY }}
+          http_url: https://api.openweathermap.org/data/2.5/weather?lat=1.35&lon=103.82&units=metric&appid=${{ secrets.OPENWEATHERMAP_API_KEY }}
           downloaded_filename: weather.json
           postprocess: ./postprocess.ts
-          mask: '["${{ secrets.ACCUWEATHER_API_KEY }}"]'
+          mask: '["${{ secrets.ACCUWEATHER_API_KEY }}", "${{ secrets.OPENWEATHERMAP_API_KEY }}"]'

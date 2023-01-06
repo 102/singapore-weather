@@ -11,7 +11,7 @@ const newFilename = "history.csv";
 const history = await readCSV(newFilename);
 
 await writeCSV(newFilename, [{
-  "temperature in °C": json[0].Temperature.Metric.Value,
-  description: json[0].WeatherText,
+  "temperature in °C": json.main.temp,
+  description: json.weather[0].main,
   date: new Date().toISOString(),
 }, ...history]);
