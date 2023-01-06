@@ -20,6 +20,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: https://api.weatherapi.com/v1/current.json?key=${{ secrets.API_KEY }}&q=Singapore&aqi=no
+          http_url: http://dataservice.accuweather.com/currentconditions/v1/300597?apikey=${{ secrets.ACCUWEATHER_API_KEY }}
           downloaded_filename: weather.json
           postprocess: ./postprocess.ts
